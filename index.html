@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tic-Tac-Toe</title>
+    <style>
+        :root {
+            color-scheme: light;
+            font-family: system-ui, sans-serif;
+            background: #ecb0c4;
+            color: #172033;
+        }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            display: grid;
+            place-items: center;
+        }
+
+        main {
+            width: min(90vw, 22rem);
+            padding: 2rem;
+            border-radius: 1rem;
+            background: #eb658f;
+            box-shadow: 0 1rem 2.5rem #1720331a;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        button, select {
+            font: inherit;
+        }
+
+        .board {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .cell {
+            aspect-ratio: 1;
+            border: 0;
+            border-radius: 0.6rem;
+            background: #e7c8d0;
+            color: #702525;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .cell:not(:disabled) {
+            cursor: pointer;
+        }
+
+        .cell:disabled {
+            opacity: 1;
+        }
+
+        #status {
+            min-height: 1.5em;
+        }
+
+        #restart-game {
+            padding: 0.5rem 0.9rem;
+            border: 0;
+            border-radius: 0.5rem;
+            background: #7b0222;
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+    <script type="importmap">
+        {
+            "imports": {
+                "./dist/assets": "./dist/assets.js",
+                "./dist/logic": "./dist/logic.js",
+                "./dist/players": "./dist/players.js"
+            }
+        }
+    </script>
+    <script type="module" src="./dist/frontend.js"></script>
+</head>
+<body>
+    <main>
+        <h1>Tic-Tac-Toe</h1>
+        <div class="controls">
+            <label for="player-sign">Play as</label>
+            <select id="player-sign"></select>
+            <button id="start-game" type="button">Start game</button>
+        </div>
+        <p id="status" role="status" aria-live="polite">Choose a sign and start.</p>
+        <div id="board" class="board" role="group" aria-label="Tic-tac-toe board"></div>
+        <button id="restart-game" type="button">New game</button>
+    </main>
+</body>
+</html>
