@@ -1,6 +1,7 @@
 A simple Tic-Tac-Toe game written in Typescript. 
 
 Directory structure:
+```
 ├── index.html              
 ├── package.json             # Project metadata and scripts
 ├── package-lock.json        # Locked npm dependencies
@@ -11,7 +12,8 @@ Directory structure:
 │   ├── logic.ts             
 │   └── players.ts           
 ├── dist/                    
-└── node_modules/             
+└── node_modules/
+```           
 
 Folders:
 dist - contains the compiled Javascript files
