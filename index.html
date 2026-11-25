@@ -87,7 +87,8 @@
             "imports": {
                 "./dist/assets": "./dist/assets.js",
                 "./dist/logic": "./dist/logic.js",
-                "./dist/players": "./dist/players.js"
+                "./dist/players": "./dist/players.js",
+                "./dist/hints": "./dist/hints.js"
             }
         }
     </script>
@@ -103,6 +104,8 @@
         </div>
         <p id="status" role="status" aria-live="polite">Choose a sign and start.</p>
         <div id="board" class="board" role="group" aria-label="Tic-tac-toe board"></div>
+        <button id="get-hint" type="button" disabled>Get a hint</button>
+        <p id="hint" role="status" aria-live="polite"></p>
         <button id="restart-game" type="button">New game</button>
     </main>
 </body>
